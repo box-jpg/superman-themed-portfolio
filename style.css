@@ -1,0 +1,219 @@
+/* CSS Variables for Superman Theme */
+:root {
+    --super-blue: #005bb5;
+    --super-red: #ed1c24;
+    --super-yellow: #fde01a;
+    --dark-bg: #003b7a;
+    --pink-note: #ffb6c1;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--super-blue);
+    /* Comic book halftone dot pattern */
+    background-image: radial-gradient(var(--dark-bg) 15%, transparent 16%), radial-gradient(var(--dark-bg) 15%, transparent 16%);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    padding: 10px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--super-yellow);
+    color: var(--super-yellow);
+}
+
+.btn-solid {
+    background: var(--super-red);
+    border: none;
+    color: white;
+}
+
+/* Center Content Styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 150px);
+    text-align: center;
+    z-index: 10;
+    position: relative;
+    pointer-events: none;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.hero-title {
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 10px 0;
+    text-transform: uppercase;
+    /* Superman 3D Text Effect */
+    text-shadow: 4px 4px 0 var(--super-red), 8px 8px 0 var(--super-yellow), 10px 10px 15px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.highlight-badge {
+    background: var(--super-yellow);
+    color: black;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Sticky Notes */
+.note {
+    position: absolute;
+    width: 160px;
+    padding: 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: black;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.note:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    z-index: 100;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Specific Note Colors */
+.note-red { background-color: var(--super-red); color: white; }
+.note-yellow { background-color: var(--super-yellow); color: black; }
+.note-blue { background-color: #3498db; color: white; }
+.note-pink { background-color: var(--pink-note); color: black; }
+
+/* Positioning the Notes */
+#note1 { top: 25%; left: 8%; transform: rotate(-6deg); }
+#note2 { bottom: 15%; left: 12%; transform: rotate(4deg); }
+#note3 { bottom: 10%; left: 45%; transform: rotate(-3deg); }
+#note4 { top: 20%; right: 15%; transform: rotate(7deg); }
+#note5 { bottom: 20%; right: 8%; transform: rotate(-5deg); }
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 35, 71, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    color: black;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 80%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 4px solid var(--super-red);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--super-red);
+}
+
+.modal-title {
+    font-weight: 900;
+    color: var(--super-blue);
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.modal-body {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
