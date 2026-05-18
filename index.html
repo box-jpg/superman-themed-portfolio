@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superman Themed Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat:wght@500;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 22 22 7 12 2"></polygon></svg>
+            Clark.
+        </div>
+        <div class="nav-buttons">
+            <button class="btn-outline">Contact HQ</button>
+            <button class="btn-solid">See My Rescues</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <p class="greeting">Hey! I'm Clark Kent</p>
+        <h1 class="hero-title">PRODUCT<br>DESIGNER</h1>
+        <p class="subtitle">
+            Currently designing for <strong>Truth & Justice</strong> at <span class="highlight-badge">🟡 The Daily Planet</span><br>
+            Previously designed for agricultural systems in Smallville.
+        </p>
+    </main>
+
+    <div class="note note-red" id="note1" data-title="Developer Disconnect" data-info="Ever handed off a pixel-perfect design in Figma, only to see the staging build look like it went through a blender? Yeah, me too. Communication is key to closing the gap between design and development!">
+        Why does the dev build look... different? :)
+    </div>
+
+    <div class="note note-yellow" id="note2" data-title="Typography Obsession" data-info="Selecting the right typeface is a massive responsibility. A font sets the emotional undertone of the entire product. I treat finding the perfect geometric sans-serif with the same gravity as naming a firstborn.">
+        I pick fonts like people pick baby names.
+    </div>
+
+    <div class="note note-blue" id="note3" data-title="Technical Limitations" data-info="Pushing the boundaries of UI is fun until engineering hits you with the 'it's going to take 6 weeks to build that custom animation' reality check. Compromise is part of the job.">
+        Talked to devs. Can't do this :(
+    </div>
+
+    <div class="note note-pink" id="note4" data-title="Color Psychology" data-info="Nothing clears my head like spending three hours tweaking the saturation of a primary button. Playing with hex codes and gradients is genuinely my form of meditation.">
+        Color palettes > therapy sometimes
+    </div>
+
+    <div class="note note-yellow" id="note5" data-title="Absolute Power" data-info="The beauty of the canvas! Unlike the real world, in my design files, I control physics. Drag, drop, scale, rotate—you can truly move everything exactly where it belongs.">
+        Yes, you can move everything!
+    </div>
+
+    <div class="modal-overlay" id="info-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <p class="modal-body" id="modal-body">Information goes here.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
